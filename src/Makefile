@@ -33,7 +33,7 @@ PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else
 subdir = contrib/pgafis
-top_builddir = /usr/src/postgresql-9.6
+top_builddir = /usr/src/postgresql-9.6.3
 #top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk

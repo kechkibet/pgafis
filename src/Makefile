@@ -23,7 +23,7 @@ SHLIB_LINK = ${NBIS_LIB}bozorth3.a \
 	${NBIS_LIB}util.a ${NBIS_LIB}image.a
 
 override CPPFLAGS := -I${NBIS_HOME}/include -L${NBIS_HOME}/lib ${NFIQ_LIBS} ${BOZORTH_LIBS} ${IMGTOOLS_LIBS}
-override LDFLAGS := -m32 -fPIC
+override LDFLAGS := -m64 -fPIC
 
 #-O2 -w -ansi -D_POSIX_SOURCE -D__NBISLE__ -D__NBIS_OPENJPEG__ -D__NBIS_PNG__ -m32 -fPIC
 
@@ -33,7 +33,7 @@ PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 else
 subdir = contrib/pgafis
-top_builddir = /usr/src/postgresql-9.3
+top_builddir = /usr/src/postgresql-9.6
 #top_builddir = ../..
 include $(top_builddir)/src/Makefile.global
 include $(top_srcdir)/contrib/contrib-global.mk

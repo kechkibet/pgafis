@@ -26,7 +26,7 @@ override CPPFLAGS := -I${NBIS_HOME}/include -L${NBIS_HOME}/lib ${NFIQ_LIBS} ${BO
 override LDFLAGS := -m64 -fPIC
 
 #-O2 -w -ansi -D_POSIX_SOURCE -D__NBISLE__ -D__NBIS_OPENJPEG__ -D__NBIS_PNG__ -m32 -fPIC
-define USE_PGXS
+define USE_PGXS endef
 ifdef USE_PGXS
 PG_CONFIG = pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)

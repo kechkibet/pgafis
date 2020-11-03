@@ -26,18 +26,11 @@ override CPPFLAGS := -I${NBIS_HOME}/include -L${NBIS_HOME}/lib ${NFIQ_LIBS} ${BO
 override LDFLAGS := -m64 -fPIC
 
 #-O2 -w -ansi -D_POSIX_SOURCE -D__NBISLE__ -D__NBIS_OPENJPEG__ -D__NBIS_PNG__ -m32 -fPIC
-define USE_PGXS endef
-ifdef USE_PGXS
+
 PG_CONFIG = pg_config
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
-else
-subdir = contrib/pgafis
-top_builddir = /usr/src/postgresql-9.6.3
-#top_builddir = ../..
-include $(top_builddir)/src/Makefile.global
-include $(top_srcdir)/contrib/contrib-global.mk
-endif
+
 
 pgafis.o: pgafis.c pgafis.h cwsq.h fiq.h mindt.h match.h xyt.h mdt.h
 
